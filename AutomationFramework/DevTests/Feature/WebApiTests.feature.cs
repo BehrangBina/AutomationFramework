@@ -85,7 +85,26 @@ this.ScenarioInitialize(scenarioInfo);
 #line 8
  testRunner.Then("Autorization Header is \"Authorization\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 9
- testRunner.Then("Authorization Header is \"Basic T00uT25ib2FyZGluZzpvbmJvYXJkaW5n\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Authorization Header is \"Basic T3stAuth1r1zat1N\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("UserName Header Can be added Correctly")]
+        public virtual void UserNameHeaderCanBeAddedCorrectly()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("UserName Header Can be added Correctly", null, ((string[])(null)));
+#line 11
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 12
+ testRunner.Given("I have ServiceUserName in Header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 13
+ testRunner.And("ServiceUserName  Header is \"ServiceUserName\" and ServiceUserName is \"BehrangBina\"" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 14
+ testRunner.Then("ServiceUserName header value will be \"BehrangBina\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

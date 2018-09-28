@@ -2,12 +2,13 @@
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using AutomationFramework.Behrang.Util.ApiHandler;
 
-namespace AutomationFramework.Behrang.Util.ApiHandler
+namespace AutomationFramework.Util.Behrang.ApiHandler
 {
     public class WebApi
     {
-        public async Task<string> GetStringFromApiCall(ApiContentType contentType, string url ,ApiHeaders[] ApiHeader)
+        public async Task<string> GetStringFromApiCall(ApiContentType contentType, string url, ApiHeaders apiHeader)
         {
             try
             {
@@ -15,11 +16,9 @@ namespace AutomationFramework.Behrang.Util.ApiHandler
                 string contenttype = GetContentType(contentType);
                 var httpClient = new HttpClient { BaseAddress = uri };
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(contenttype));
-  
-                foreach (var apiHeader in ApiHeader)
-                {
-                    if(apiHeader.Authorization!=null)  httpClient.DefaultRequestHeaders.Add("Authorization",apiHeader.Authorization);
-                }
+                if (apiHeader.Authorization != null) httpClient.DefaultRequestHeaders.Add(nameof(apiHeader.Authorization), apiHeader.Authorization);
+                if(apiHeader.ServicePassword!=null) httpClient.DefaultRequestHeaders.Add(nameof(apiHeader.ServicePassword),apiHeader.ServicePassword);
+                if(apiHeader.ServiceUserName!=null) httpClient.DefaultRequestHeaders.Add(nameof(apiHeader.ServiceUserName),apiHeader.ServiceUserName);
             }
             catch (Exception e)
             {

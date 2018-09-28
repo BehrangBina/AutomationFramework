@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutomationFramework.Behrang.Util.ApiHandler;
+using Microsoft.SqlServer.Server;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
 
@@ -21,7 +22,7 @@ namespace AutomationFramework.DevTests.Steps
         [Given(@"I have Authorization Header")]
         public void GivenIHaveAuthorizationHeader()
         {
-            var credentialBase64 = "T00uT25ib2FyZGluZzpvbmJvYXJkaW5n";
+            var credentialBase64 = "T3stAuth1r1zat1N";
            apiHeaders.Authorization= $"Basic {credentialBase64}";
         }
         [Then(@"Autorization Header is ""(.*)""")]
@@ -37,6 +38,26 @@ namespace AutomationFramework.DevTests.Steps
            Assert.AreEqual(apiHeaders.Authorization,authString);
            Console.WriteLine(apiHeaders.Authorization);
         }
+        [Given(@"I have ServiceUserName in Header")]
+        public void GivenIHaveServiceUserNameInHeader()
+        {
+            if (apiHeaders == null) throw new NullReferenceException("API HEADER NOT INITIATED");
+        }
+
+        [Given(@"ServiceUserName  Header is ""(.*)"" and ServiceUserName is ""(.*)""")]
+        public void GivenServiceUserNameHeaderIsAndServiceUserNameIs(string serviceUserNameHeader, string serviceUserNameValue)
+        {
+            apiHeaders.ServiceUserName = serviceUserNameValue;
+            Assert.AreEqual(nameof(apiHeaders.ServiceUserName), serviceUserNameHeader);
+
+        }
+
+        [Then(@"ServiceUserName header value will be ""(.*)""")]
+        public void ThenServiceUserNameHeaderValueWillBe(string serviceUserNameValue)
+        {
+           Assert.AreEqual(apiHeaders.ServiceUserName, serviceUserNameValue);
+        }
+
 
     }
 }
