@@ -12,3 +12,6 @@ Scenario: UserName Header Can be added Correctly
 	Given I have ServiceUserName in Header 
 	And ServiceUserName  Header is "ServiceUserName" and ServiceUserName is "BehrangBina"
 	Then ServiceUserName header value will be "BehrangBina"
+
+Scenario:  Test Web API data pull
+	Given I am in the "https://api.github.com/users/tdshipley" page  I can Get The first "title"

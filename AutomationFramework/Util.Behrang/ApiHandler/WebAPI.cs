@@ -3,12 +3,14 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using AutomationFramework.Behrang.Util.ApiHandler;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace AutomationFramework.Util.Behrang.ApiHandler
 {
     public class WebApi
     {
-        public async Task<string> GetStringFromApiCall(ApiContentType contentType, string url, ApiHeaders apiHeader)
+        public async Task<string> PostApiCallAndReturnResult(ApiContentType contentType, string url, ApiHeaders apiHeader,string postData,string jsonNodeKey)
         {
             try
             {
@@ -19,17 +21,28 @@ namespace AutomationFramework.Util.Behrang.ApiHandler
                 if (apiHeader.Authorization != null) httpClient.DefaultRequestHeaders.Add(nameof(apiHeader.Authorization), apiHeader.Authorization);
                 if(apiHeader.ServicePassword!=null) httpClient.DefaultRequestHeaders.Add(nameof(apiHeader.ServicePassword),apiHeader.ServicePassword);
                 if(apiHeader.ServiceUserName!=null) httpClient.DefaultRequestHeaders.Add(nameof(apiHeader.ServiceUserName),apiHeader.ServiceUserName);
+
+                
+                HttpContent bodyContent = new StringContent(postData);
+                bodyContent.Headers.ContentType = new MediaTypeHeaderValue("application/x-www-form-urlencoded");
+
+                var response = httpClient.PostAsync(uri, bodyContent).Result;
+                Console.Out.WriteLine($"Debaug GetStringFromApiCall Reason: {response.ReasonPhrase} Request: {response.RequestMessage}");
+                var content = await response.Content.ReadAsStringAsync();
+                var data = (JObject)JsonConvert.DeserializeObject(content);
+                Console.WriteLine($"Data: \r\n{data}");
+                string valueOfJson = data[jsonNodeKey].Value<string>();
+                return valueOfJson;
+
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
                 throw;
             }
-
-
-
-            return null;
         }
+
+
 
         private string GetContentType(ApiContentType contentType)
         {

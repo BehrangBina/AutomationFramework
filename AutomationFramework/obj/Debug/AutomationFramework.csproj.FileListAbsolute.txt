@@ -20,3 +20,11 @@ D:\work\AutomationFramework\AutomationFramework\bin\Debug\nunit.framework.xml
 D:\work\AutomationFramework\AutomationFramework\obj\Debug\AutomationFramework.csproj.CopyComplete
 D:\work\AutomationFramework\AutomationFramework\obj\Debug\AutomationFramework.dll
 D:\work\AutomationFramework\AutomationFramework\obj\Debug\AutomationFramework.pdb
+D:\work\AutomationFramework\AutomationFramework\bin\Debug\Protractor.dll
+D:\work\AutomationFramework\AutomationFramework\bin\Debug\WebDriver.dll
+D:\work\AutomationFramework\AutomationFramework\bin\Debug\Protractor.pdb
+D:\work\AutomationFramework\AutomationFramework\bin\Debug\Protractor.xml
+D:\work\AutomationFramework\AutomationFramework\bin\Debug\System.ValueTuple.xml
+D:\work\AutomationFramework\AutomationFramework\bin\Debug\WebDriver.xml
+D:\work\AutomationFramework\AutomationFramework\bin\Debug\WebDriver.Support.dll
+D:\work\AutomationFramework\AutomationFramework\bin\Debug\WebDriver.Support.xml
