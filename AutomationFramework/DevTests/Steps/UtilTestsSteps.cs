@@ -22,11 +22,19 @@ namespace AutomationFramework.DevTests.Steps
         [Then(@"I can access the resource directory and load the files")]
         public void ThenICanAccessTheResourceDirectoryAndLoadTheFiles(Table table)
         {
-            var directoryName = table.Header.ElementAt(0);
             foreach (var filename in table.Rows)
             {
-                var filePath = Path.Combine(_currentdir, directoryName, "ChromeExtensions", filename.Values.ElementAt(0));
-                Console.WriteLine($"Checking : {filePath}");
+
+                var folderPath = filename.Keys.FirstOrDefault();
+                
+                var subFolderName = filename.Values.FirstOrDefault();
+                string filePath = null;
+              //  var parentFolderName = filename.Values.ElementAt(1);
+                if (folderPath == SolutionFolders.Resources.ToString())
+                {
+                    filePath = Path.Combine(_currentdir, folderPath, "ChromeExtensions", filename.Values.ElementAt(0));
+                }
+                if (filePath != null) Console.WriteLine($"Checking : {filePath}");
                 Assert.That(File.Exists(filePath));
             }
         }

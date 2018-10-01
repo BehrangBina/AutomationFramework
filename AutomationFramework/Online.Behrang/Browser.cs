@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Threading;
 using AutomationFramework.Online.Behrang.ChromeHandler;
+using AutomationFramework.Online.Behrang.FirefoxHandler;
 using log4net;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using Protractor;
 
@@ -35,15 +35,21 @@ namespace AutomationFramework.Online.Behrang
                         .SetExtention()
                         .SetupChromeWithOption()
                         .GetDriverInstance();
-                    
+                   
                    
                     break;
                 case (SupportedBrowsers.Edge):
                     Driver= new EdgeDriver();
 
                     break;
-                    
+                   case SupportedBrowsers.Firefox:
+                     var firefox = new Firefox();
+                       Driver = firefox
+                           .SetupFirefoxWithOption()
+                           .GetDriverInstance();
+                       break;
             }
+            Log.Info("Driver Set to: "+browser);
             NgDriver = new NgWebDriver(Driver);
             return this;
         }
@@ -57,6 +63,7 @@ namespace AutomationFramework.Online.Behrang
         /// </summary>
         public void Dispose()
         {
+            Log.Info("Disposing Browser");
             Thread.Sleep(1000);
             NgDriver?.Quit();
             Driver?.Quit();

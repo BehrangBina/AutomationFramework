@@ -2,7 +2,6 @@
 using System.IO;
 using System.Net.Mail;
 using System.Net.Mime;
-using System.Text;
 
 namespace AutomationFramework.Util.Behrang.EmailHandler
 {
@@ -20,7 +19,7 @@ namespace AutomationFramework.Util.Behrang.EmailHandler
         public void SendEmailWithAttachment(string[] attachmentsAbsolutePath,
             string from,string[] to,string  smptpHost,string subject,string body)
         {
-            var comment = new StringBuilder();
+            //var comment = new StringBuilder();
             try
             {
 

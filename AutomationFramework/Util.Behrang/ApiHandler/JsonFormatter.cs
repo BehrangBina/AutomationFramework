@@ -2,7 +2,7 @@
 using System.Linq;
 using Newtonsoft.Json.Linq;
 
-namespace AutomationFramework.Behrang.Util.ApiHandler
+namespace AutomationFramework.Util.Behrang.ApiHandler
 {
     /// <summary>
     /// Remove a Token from a JSON String

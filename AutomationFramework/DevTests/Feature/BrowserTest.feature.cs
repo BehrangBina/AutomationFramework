@@ -86,6 +86,9 @@ this.ScenarioInitialize(scenarioInfo);
                         "Browsers",
                         "Url"});
             table1.AddRow(new string[] {
+                        "Firefox",
+                        "http://au.yahoo.com"});
+            table1.AddRow(new string[] {
                         "Chrome",
                         "https://www.google.com"});
             table1.AddRow(new string[] {

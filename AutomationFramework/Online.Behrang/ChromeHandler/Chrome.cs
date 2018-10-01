@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing.Imaging;
 using System.IO;
 using AutomationFramework.Util.Behrang.ConfigurationHelper;
 using AutomationFramework.Util.Behrang.FileHandler;
@@ -13,10 +12,12 @@ namespace AutomationFramework.Online.Behrang.ChromeHandler
     public class Chrome
     {
         private IWebDriver _driver;
-        private const int ImplicitTimeWaitInSeconds = 3;
-        private const int PageLoadTimeoutInSeconds = 3;
+        private const int ImplicitTimeWaitInSeconds = 30;
+        private const int PageLoadTimeoutInSeconds = 30;
         private ChromeOptions _options;
-
+        /// <summary>
+        ///  Array of string for chrome Options
+        /// </summary>
         private readonly string[] _chromeOptions = 
         {
             "--start-maximized",
@@ -24,47 +25,48 @@ namespace AutomationFramework.Online.Behrang.ChromeHandler
             "--disable-popup-blocking",
            // "--incognito"
         };
+        /// <summary>
+        /// Setup Chrome with options
+        /// </summary>
+        /// <returns>this class instance</returns>
         public Chrome SetupChromeWithOption()
         {
-
-
-
                 foreach (var opt in _chromeOptions)
                 {
                     _options.AddArguments(opt);
                 }
-
-            
-
             var firingDriver = new EventFiringWebDriver(new ChromeDriver(_options));
             firingDriver.ExceptionThrown += firingDriver_TakeScreenshotOnException;
 
             firingDriver
                 .Manage()
                 .Timeouts()
-                .ImplicitlyWait(TimeSpan.FromSeconds(ImplicitTimeWaitInSeconds));
+                .ImplicitWait=(TimeSpan.FromSeconds(ImplicitTimeWaitInSeconds));
             firingDriver
                 .Manage()
                 .Timeouts()
-                .SetPageLoadTimeout(TimeSpan.FromSeconds(PageLoadTimeoutInSeconds));
+                .PageLoad=(TimeSpan.FromSeconds(PageLoadTimeoutInSeconds));
             _driver = firingDriver;
             return this;
         }
 
+        /// <summary>
+        /// Handling exceptions occure in the webbrowser and 
+        /// takes the screenshot and write the logs
+        /// </summary>
+        /// <param name="sender">object sending the event</param>
+        /// <param name="e">event exception</param>
         private void firingDriver_TakeScreenshotOnException(object sender, WebDriverExceptionEventArgs e)
         {
             var timestamp = DateTime.Now.ToString("yyyy-MM-dd-hhmm-ss");
            
             var conf = new AppConfigHandler();
             var folderPath = conf.ReadFolderPathFromConfigurationFile(SolutionSubFolder.Logs);
-            var imagePath = Path.Combine(folderPath, "Exception-" + timestamp + ".png");
-            _driver.TakeScreenshot().SaveAsFile(imagePath, ImageFormat.Png);
-            var filePath = Path.Combine(folderPath, "Exception-" + timestamp + ".txt");
+            var imagePath = Path.Combine(folderPath, "ChromeException-" + timestamp + ".png");
+            _driver.TakeScreenshot().SaveAsFile(imagePath, ScreenshotImageFormat.Bmp);
+            var filePath = Path.Combine(folderPath, "ChromeException-" + timestamp + ".txt");
             File.WriteAllText(filePath,e.ThrownException.ToString());
         }
-
- 
-
         /// <summary>
         /// Set Proxy
         ///  i.e. "myhttpproxy:3337"

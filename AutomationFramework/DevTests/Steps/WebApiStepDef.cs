@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
-using AutomationFramework.Behrang.Util.ApiHandler;
 using AutomationFramework.Util.Behrang.ApiHandler;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;

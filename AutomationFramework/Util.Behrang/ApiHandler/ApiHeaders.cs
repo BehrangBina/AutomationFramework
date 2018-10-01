@@ -1,4 +1,4 @@
-﻿namespace AutomationFramework.Behrang.Util.ApiHandler
+﻿namespace AutomationFramework.Util.Behrang.ApiHandler
 {
     public class ApiHeaders
     {

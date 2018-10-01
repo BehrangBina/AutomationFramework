@@ -3,6 +3,7 @@ using System.Linq;
 using AutomationFramework.Online.Behrang;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using TechTalk.SpecFlow;
 
 namespace AutomationFramework.DevTests.Steps
@@ -37,13 +38,19 @@ namespace AutomationFramework.DevTests.Steps
                 }
                 if (browserName == SupportedBrowsers.Edge.ToString())
                 {
-                    _driver = _browser.SetBrowserType(SupportedBrowsers.Edge).Driver;
+                    _driver = _browser?.SetBrowserType(SupportedBrowsers.Edge).Driver;
+                }
+                if (browserName == SupportedBrowsers.Firefox.ToString())
+                {
+                   // _driver=new FirefoxDriver();
+                    _driver = _browser?.SetBrowserType(SupportedBrowsers.Firefox).Driver;
                 }
                 _driver.Navigate().GoToUrl(urlValue);
-                 
-                _browser?.Dispose();
+                Console.WriteLine($"Browser: {browserName} | URL: {urlValue} | Title: {_driver.Title}");
+                _driver.Dispose();
+
             }
-            Console.WriteLine($"Browser: {browserName} | URL: {urlValue} | Title: {_driver.Title}");
+           
 
              
            

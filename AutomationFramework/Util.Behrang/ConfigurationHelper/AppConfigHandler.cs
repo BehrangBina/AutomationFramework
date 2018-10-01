@@ -5,7 +5,7 @@ namespace AutomationFramework.Util.Behrang.ConfigurationHelper
 {
     class AppConfigHandler
     {
-        private  string _solutionDir; 
+        private readonly string _solutionDir; 
 
         public AppConfigHandler()
         {
