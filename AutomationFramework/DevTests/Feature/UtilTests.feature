@@ -9,3 +9,10 @@ Scenario:  File and folder functionality is working correctly
 	| Resources |
 	| Authenticator_v4.18.crx |
 	| XpathHelperWizard_v3.0.24_0.crx|
+
+Scenario: Can Read The Files and folders using Configuration Helper
+	Given  I have a reference of the AppConfigration Handler
+	When I have The subfolders selected the folder Path is valid
+	| Folder SubFolder Name | Parent Folder Name |
+	| Logs                  | Reports            |
+	| ChromeExtensions      | Resources          |

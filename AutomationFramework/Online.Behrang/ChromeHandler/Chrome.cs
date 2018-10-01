@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing.Imaging;
 using System.IO;
+using AutomationFramework.Util.Behrang.ConfigurationHelper;
 using AutomationFramework.Util.Behrang.FileHandler;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -12,8 +13,8 @@ namespace AutomationFramework.Online.Behrang.ChromeHandler
     public class Chrome
     {
         private IWebDriver _driver;
-        private const int ImplicitTimeWaitInSeconds = 30;
-        private const int PageLoadTimeoutInSeconds = 30;
+        private const int ImplicitTimeWaitInSeconds = 3;
+        private const int PageLoadTimeoutInSeconds = 3;
         private ChromeOptions _options;
 
         private readonly string[] _chromeOptions = 
@@ -53,7 +54,13 @@ namespace AutomationFramework.Online.Behrang.ChromeHandler
         private void firingDriver_TakeScreenshotOnException(object sender, WebDriverExceptionEventArgs e)
         {
             var timestamp = DateTime.Now.ToString("yyyy-MM-dd-hhmm-ss");
-            _driver.TakeScreenshot().SaveAsFile("Exception-" + timestamp + ".png", ImageFormat.Png);
+           
+            var conf = new AppConfigHandler();
+            var folderPath = conf.ReadFolderPathFromConfigurationFile(SolutionSubFolder.Logs);
+            var imagePath = Path.Combine(folderPath, "Exception-" + timestamp + ".png");
+            _driver.TakeScreenshot().SaveAsFile(imagePath, ImageFormat.Png);
+            var filePath = Path.Combine(folderPath, "Exception-" + timestamp + ".txt");
+            File.WriteAllText(filePath,e.ThrownException.ToString());
         }
 
  

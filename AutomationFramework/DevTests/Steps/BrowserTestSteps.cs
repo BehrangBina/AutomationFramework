@@ -32,13 +32,15 @@ namespace AutomationFramework.DevTests.Steps
                  urlValue = row.Values.ElementAt(1);
                 if (browserName == SupportedBrowsers.Chrome.ToString())
                 {
-                    _driver = _browser.SetBrowserType(SupportedBrowsers.Chrome).Driver;
+                    _driver = _browser?.SetBrowserType(SupportedBrowsers.Chrome).Driver;
+                   
                 }
                 if (browserName == SupportedBrowsers.Edge.ToString())
                 {
                     _driver = _browser.SetBrowserType(SupportedBrowsers.Edge).Driver;
                 }
                 _driver.Navigate().GoToUrl(urlValue);
+                 
                 _browser?.Dispose();
             }
             Console.WriteLine($"Browser: {browserName} | URL: {urlValue} | Title: {_driver.Title}");

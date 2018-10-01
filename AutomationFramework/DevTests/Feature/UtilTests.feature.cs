@@ -93,6 +93,32 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Can Read The Files and folders using Configuration Helper")]
+        public virtual void CanReadTheFilesAndFoldersUsingConfigurationHelper()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Can Read The Files and folders using Configuration Helper", null, ((string[])(null)));
+#line 13
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 14
+ testRunner.Given("I have a reference of the AppConfigration Handler", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Folder SubFolder Name",
+                        "Parent Folder Name"});
+            table2.AddRow(new string[] {
+                        "Logs",
+                        "Reports"});
+            table2.AddRow(new string[] {
+                        "ChromeExtensions",
+                        "Resources"});
+#line 15
+ testRunner.When("I have The subfolders selected the folder Path is valid", ((string)(null)), table2, "When ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
