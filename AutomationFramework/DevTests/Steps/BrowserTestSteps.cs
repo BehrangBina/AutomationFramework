@@ -2,8 +2,6 @@
 using System.Linq;
 using AutomationFramework.Online.Behrang;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
 using TechTalk.SpecFlow;
 
 namespace AutomationFramework.DevTests.Steps
@@ -12,7 +10,7 @@ namespace AutomationFramework.DevTests.Steps
     public class BrowserTestSteps
     {
         private Browser _browser;
-        private IWebDriver _driver = null;
+        private IWebDriver _driver;
 
         [Given(@"I Have an instance of the browser")]
         public void GivenIHaveAnInstanceOfTheBrowser()
@@ -25,12 +23,10 @@ namespace AutomationFramework.DevTests.Steps
         public void ThenICanLunchTheBrowserWithAUrl(Table table)
         {
             var rows = table.Rows;
-            var browserName = string.Empty;
-            var urlValue = string.Empty;
             foreach (var row in rows)
             {
-                browserName = row.Values.ElementAt(0);
-                urlValue = row.Values.ElementAt(1);
+                var browserName = row.Values.ElementAt(0);
+                var urlValue = row.Values.ElementAt(1);
                 if (browserName == SupportedBrowsers.Chrome.ToString())
                 {
                     _driver = _browser?.SetBrowserType(SupportedBrowsers.Chrome).Driver;
@@ -45,9 +41,9 @@ namespace AutomationFramework.DevTests.Steps
                 }
                 var uri = new Uri(urlValue);
 
-                _driver.Navigate().GoToUrl(urlValue);
-                Console.WriteLine($"Browser: {browserName} | URL: {urlValue} | Title: {_driver.Title}");
-                _driver.Dispose();
+                _driver?.Navigate().GoToUrl(uri);
+                Console.WriteLine($"Browser: {browserName} | URL: {urlValue} | Title: {_driver?.Title}");
+                _driver?.Dispose();
             }
 
 

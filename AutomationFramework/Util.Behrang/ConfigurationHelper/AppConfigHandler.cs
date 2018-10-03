@@ -27,7 +27,13 @@ namespace AutomationFramework.Util.Behrang.ConfigurationHelper
                         SolutionFolders.Resources.ToString(),
                         solutionSubFolder.ToString());
                     break;
+                case SolutionSubFolder.TestData:
+                    folderPath = Path.Combine(_solutionDir,
+                        SolutionFolders.Resources.ToString(),
+                        solutionSubFolder.ToString());
+                    break;
             }
+            if (!Directory.Exists(folderPath)) Directory.CreateDirectory(folderPath);
             return folderPath;
         }
 
@@ -42,6 +48,6 @@ namespace AutomationFramework.Util.Behrang.ConfigurationHelper
 
     public enum SolutionSubFolder
     {
-        Reports, Logs
+        Reports, Logs , TestData
     }
 }
