@@ -288,6 +288,11 @@
             </summary>
             <param name="path">The path to load using the same syntax as '$location.url()'.</param>
         </member>
+        <member name="P:Protractor.NgNavigation.NgDriver">
+            <summary>
+            Gets the <see cref="T:Protractor.NgWebDriver"/> instance used to initialize the instance.
+            </summary>
+        </member>
         <member name="P:Protractor.NgNavigation.WrappedNavigation">
             <summary>
             Gets the wrapped <see cref="T:OpenQA.Selenium.INavigation"/> instance.
@@ -387,7 +392,7 @@
             This is used before any action on this driver, except if IgnoreSynchonization flag is set to true.
             </summary>
             <remarks>
-            Use NgWebDriver.Manage().Timeouts().SetScriptTimeout() to specify the amount of time the driver should wait for Angular.
+            Use NgWebDriver.Manage().Timeouts().AsynchronousJavaScript to specify the amount of time the driver should wait for Angular.
             </remarks>
             <exception cref="T:System.InvalidOperationException">If Angular could not be found.</exception>
             <exception cref="T:OpenQA.Selenium.WebDriverTimeoutException">If the driver times out while waiting for Angular.</exception>
@@ -667,6 +672,11 @@
             </summary>
             <param name="expression">The expression to evaluate.</param>
             <returns>The expression evaluated by Angular.</returns>
+        </member>
+        <member name="P:Protractor.NgWebElement.NgDriver">
+            <summary>
+            Gets the <see cref="T:Protractor.NgWebDriver"/> instance used to initialize the element.
+            </summary>
         </member>
         <member name="P:Protractor.NgWebElement.WrappedElement">
             <summary>

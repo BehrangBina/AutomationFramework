@@ -28,3 +28,5 @@ D:\work\AutomationFramework\AutomationFramework\bin\Debug\WebDriver.xml
 D:\work\AutomationFramework\AutomationFramework\bin\Debug\WebDriver.Support.dll
 D:\work\AutomationFramework\AutomationFramework\bin\Debug\WebDriver.Support.xml
 D:\work\AutomationFramework\AutomationFramework\obj\Debug\AutomationFramework.csprojAssemblyReference.cache
+D:\work\AutomationFramework\AutomationFramework\bin\Debug\SeleniumExtras.PageObjects.dll
+D:\work\AutomationFramework\AutomationFramework\bin\Debug\SeleniumExtras.WaitHelpers.dll
