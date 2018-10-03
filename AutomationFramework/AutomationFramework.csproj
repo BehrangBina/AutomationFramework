@@ -87,10 +87,13 @@
       <DependentUpon>WebApiTests.feature</DependentUpon>
     </Compile>
     <Compile Include="DevTests\Steps\BrowserTestSteps.cs" />
+    <Compile Include="DevTests\Steps\TestFirefox.cs" />
     <Compile Include="DevTests\Steps\UtilTestsSteps.cs" />
     <Compile Include="DevTests\Steps\WebApiStepDef.cs" />
     <Compile Include="Online.Behrang\Browser.cs" />
+    <Compile Include="Online.Behrang\IBrowserHandler.cs" />
     <Compile Include="Online.Behrang\ChromeHandler\Chrome.cs" />
+    <Compile Include="Online.Behrang\EdgeHandler\Edge.cs" />
     <Compile Include="Online.Behrang\FirefoxHandler\Firefox.cs" />
     <Compile Include="Online.Behrang\SupportedBrowsers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

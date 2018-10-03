@@ -1,4 +1,3 @@
-D:\work\AutomationFramework\AutomationFramework\obj\Debug\AutomationFramework.csprojAssemblyReference.cache
 D:\work\AutomationFramework\AutomationFramework\obj\Debug\AutomationFramework.csproj.CoreCompileInputs.cache
 D:\work\AutomationFramework\AutomationFramework\bin\Debug\NUnit3.TestAdapter.dll
 D:\work\AutomationFramework\AutomationFramework\bin\Debug\NUnit3.TestAdapter.pdb
@@ -28,3 +27,4 @@ D:\work\AutomationFramework\AutomationFramework\bin\Debug\System.ValueTuple.xml
 D:\work\AutomationFramework\AutomationFramework\bin\Debug\WebDriver.xml
 D:\work\AutomationFramework\AutomationFramework\bin\Debug\WebDriver.Support.dll
 D:\work\AutomationFramework\AutomationFramework\bin\Debug\WebDriver.Support.xml
+D:\work\AutomationFramework\AutomationFramework\obj\Debug\AutomationFramework.csprojAssemblyReference.cache

@@ -25,16 +25,15 @@ namespace AutomationFramework.DevTests.Steps
         public void ThenICanLunchTheBrowserWithAUrl(Table table)
         {
             var rows = table.Rows;
-            var browserName =string.Empty;
+            var browserName = string.Empty;
             var urlValue = string.Empty;
             foreach (var row in rows)
             {
-                 browserName = row.Values.ElementAt(0);
-                 urlValue = row.Values.ElementAt(1);
+                browserName = row.Values.ElementAt(0);
+                urlValue = row.Values.ElementAt(1);
                 if (browserName == SupportedBrowsers.Chrome.ToString())
                 {
                     _driver = _browser?.SetBrowserType(SupportedBrowsers.Chrome).Driver;
-                   
                 }
                 if (browserName == SupportedBrowsers.Edge.ToString())
                 {
@@ -42,21 +41,42 @@ namespace AutomationFramework.DevTests.Steps
                 }
                 if (browserName == SupportedBrowsers.Firefox.ToString())
                 {
-                   // _driver=new FirefoxDriver();
                     _driver = _browser?.SetBrowserType(SupportedBrowsers.Firefox).Driver;
                 }
+                var uri = new Uri(urlValue);
+
                 _driver.Navigate().GoToUrl(urlValue);
                 Console.WriteLine($"Browser: {browserName} | URL: {urlValue} | Title: {_driver.Title}");
                 _driver.Dispose();
-
             }
-           
 
-             
-           
+
+
+
         }
 
 
-   
+
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

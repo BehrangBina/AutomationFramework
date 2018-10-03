@@ -86,14 +86,14 @@ this.ScenarioInitialize(scenarioInfo);
                         "Browsers",
                         "Url"});
             table1.AddRow(new string[] {
+                        "Edge",
+                        "http://www.bing.com"});
+            table1.AddRow(new string[] {
                         "Firefox",
-                        "http://au.yahoo.com"});
+                        "http://www.bing.com"});
             table1.AddRow(new string[] {
                         "Chrome",
                         "https://www.google.com"});
-            table1.AddRow(new string[] {
-                        "Edge",
-                        "http://www.bing.com"});
 #line 7
   testRunner.Then("I Can lunch the browser with a url", ((string)(null)), table1, "Then ");
 #line hidden

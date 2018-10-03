@@ -44,9 +44,8 @@ namespace AutomationFramework.Online.Behrang
                     break;
                    case SupportedBrowsers.Firefox:
                      var firefox = new Firefox();
-                       Driver = firefox
-                           .SetupFirefoxWithOption()
-                           .GetDriverInstance();
+                       Driver = firefox.SetupFirefoxWithOption().GetDriverInstance();
+                          
                        break;
             }
             Log.Info("Driver Set to: "+browser);

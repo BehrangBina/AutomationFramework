@@ -9,7 +9,7 @@ using OpenQA.Selenium.Support.Extensions;
 
 namespace AutomationFramework.Online.Behrang.ChromeHandler
 {
-    public class Chrome
+    public class Chrome: IBrowserHandler
     {
         private IWebDriver _driver;
         private const int ImplicitTimeWaitInSeconds = 30;
@@ -50,23 +50,7 @@ namespace AutomationFramework.Online.Behrang.ChromeHandler
             return this;
         }
 
-        /// <summary>
-        /// Handling exceptions occure in the webbrowser and 
-        /// takes the screenshot and write the logs
-        /// </summary>
-        /// <param name="sender">object sending the event</param>
-        /// <param name="e">event exception</param>
-        private void firingDriver_TakeScreenshotOnException(object sender, WebDriverExceptionEventArgs e)
-        {
-            var timestamp = DateTime.Now.ToString("yyyy-MM-dd-hhmm-ss");
-           
-            var conf = new AppConfigHandler();
-            var folderPath = conf.ReadFolderPathFromConfigurationFile(SolutionSubFolder.Logs);
-            var imagePath = Path.Combine(folderPath, "ChromeException-" + timestamp + ".png");
-            _driver.TakeScreenshot().SaveAsFile(imagePath, ScreenshotImageFormat.Bmp);
-            var filePath = Path.Combine(folderPath, "ChromeException-" + timestamp + ".txt");
-            File.WriteAllText(filePath,e.ThrownException.ToString());
-        }
+         
         /// <summary>
         /// Set Proxy
         ///  i.e. "myhttpproxy:3337"
@@ -112,5 +96,16 @@ namespace AutomationFramework.Online.Behrang.ChromeHandler
             return _driver;
         }
 
+        public void firingDriver_TakeScreenshotOnException(object sender, WebDriverExceptionEventArgs e)
+        {
+            var timestamp = DateTime.Now.ToString("yyyy-MM-dd-hhmm-ss");
+
+            var conf = new AppConfigHandler();
+            var folderPath = conf.ReadFolderPathFromConfigurationFile(SolutionSubFolder.Logs);
+            var imagePath = Path.Combine(folderPath, "ChromeException-" + timestamp + ".png");
+            _driver.TakeScreenshot().SaveAsFile(imagePath, ScreenshotImageFormat.Bmp);
+            var filePath = Path.Combine(folderPath, "ChromeException-" + timestamp + ".txt");
+            File.WriteAllText(filePath, e.ThrownException.ToString());
+        }
     }
 }

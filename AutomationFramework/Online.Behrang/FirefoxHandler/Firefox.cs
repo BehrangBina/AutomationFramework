@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing.Imaging;
 using System.IO;
 using AutomationFramework.Util.Behrang.ConfigurationHelper;
 using OpenQA.Selenium;
@@ -9,44 +8,30 @@ using OpenQA.Selenium.Support.Extensions;
 
 namespace AutomationFramework.Online.Behrang.FirefoxHandler
 {
-   public class Firefox
+    public class Firefox:IBrowserHandler
     {
         private IWebDriver _driver;
         private const int ImplicitTimeWaitInSeconds = 30;
         private const int PageLoadTimeoutInSeconds = 30;
-        private FirefoxOptions _options;
-        /// <summary>
-        ///  Array of string for chrome Options
-        /// </summary>
-        private readonly string[] _firefoxOptions =
-        {
-            "--start-maximized",
-            "--ignore-certificate-errors",
-            "--disable-popup-blocking",
-            // "--incognito"
-        };
-        // <summary>
-        /// Setup firefox with options
-        /// </summary>
-        /// <returns>this class instance</returns>
         public Firefox SetupFirefoxWithOption()
         {
-            _options=new FirefoxOptions();
-            foreach (var opt in _firefoxOptions)
-            {
-                _options.AddArguments(opt);
-            }
-            var firingDriver = new EventFiringWebDriver(new FirefoxDriver(_options));
+            FirefoxProfile ffProfile = new FirefoxProfile();
+            ffProfile.SetPreference("acceptInsecureCerts", true);
+            ffProfile.SetPreference("security.enterprise_roots.enabled", true);
+            var firefpoxOptions = new FirefoxOptions { Profile = ffProfile };
+          
+
+            var firingDriver = new EventFiringWebDriver(new FirefoxDriver(firefpoxOptions));
             firingDriver.ExceptionThrown += firingDriver_TakeScreenshotOnException;
 
             firingDriver
                 .Manage()
                 .Timeouts()
-                .ImplicitWait=(TimeSpan.FromSeconds(ImplicitTimeWaitInSeconds));
+                .ImplicitWait = (TimeSpan.FromSeconds(ImplicitTimeWaitInSeconds));
             firingDriver
                 .Manage()
                 .Timeouts()
-                .PageLoad=(TimeSpan.FromSeconds(PageLoadTimeoutInSeconds));
+                .PageLoad = (TimeSpan.FromSeconds(PageLoadTimeoutInSeconds));
             _driver = firingDriver;
             _driver.Manage().Window.Maximize();
             return this;
@@ -56,13 +41,14 @@ namespace AutomationFramework.Online.Behrang.FirefoxHandler
         {
             return _driver;
         }
+
         /// <summary>
         /// Handling exceptions occure in the webbrowser and 
         /// takes the screenshot and write the logs
         /// </summary>
         /// <param name="sender">object sending the event</param>
         /// <param name="e">event exception</param>
-        private void firingDriver_TakeScreenshotOnException(object sender, WebDriverExceptionEventArgs e)
+        public void firingDriver_TakeScreenshotOnException(object sender, WebDriverExceptionEventArgs e)
         {
             var timestamp = DateTime.Now.ToString("yyyy-MM-dd-hhmm-ss");
 
@@ -73,7 +59,5 @@ namespace AutomationFramework.Online.Behrang.FirefoxHandler
             var filePath = Path.Combine(folderPath, "FirefoxException-" + timestamp + ".txt");
             File.WriteAllText(filePath, e.ThrownException.ToString());
         }
-
-
     }
 }
