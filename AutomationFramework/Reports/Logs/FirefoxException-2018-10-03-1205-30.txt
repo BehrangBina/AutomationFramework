@@ -1,6 +1,0 @@
-System.InvalidOperationException:  (InsecureCertificate)
-   at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
-   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
-   at OpenQA.Selenium.Remote.RemoteWebDriver.set_Url(String value)
-   at OpenQA.Selenium.Remote.RemoteNavigator.GoToUrl(String url)
-   at OpenQA.Selenium.Support.Events.EventFiringWebDriver.EventFiringNavigation.GoToUrl(String url)

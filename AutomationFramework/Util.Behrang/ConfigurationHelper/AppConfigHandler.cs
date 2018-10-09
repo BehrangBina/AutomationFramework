@@ -24,7 +24,7 @@ namespace AutomationFramework.Util.Behrang.ConfigurationHelper
                     break;
                 case (SolutionSubFolder.Reports):
                     folderPath = Path.Combine(_solutionDir,
-                        SolutionFolders.Resources.ToString(),
+                        SolutionFolders.Reports.ToString(),
                         solutionSubFolder.ToString());
                     break;
                 case SolutionSubFolder.TestData:

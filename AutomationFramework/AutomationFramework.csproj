@@ -63,6 +63,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -85,6 +86,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BrowserTest.feature</DependentUpon>
     </Compile>
+    <Compile Include="DevTests\Feature\GenerateTestReport.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GenerateTestReport.feature</DependentUpon>
+    </Compile>
     <Compile Include="DevTests\Feature\UtilTests.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -97,6 +103,7 @@
     </Compile>
     <Compile Include="DevTests\Steps\BrowserTestSteps.cs" />
     <Compile Include="DevTests\Steps\TestFirefox.cs" />
+    <Compile Include="DevTests\Steps\TestGenerateHtmlReportStepDef.cs" />
     <Compile Include="DevTests\Steps\UtilTestsSteps.cs" />
     <Compile Include="DevTests\Steps\WebApiStepDef.cs" />
     <Compile Include="Online.Behrang\Browser.cs" />
@@ -112,6 +119,8 @@
     <Compile Include="Util.Behrang\ApiHandler\JsonFormatter.cs" />
     <Compile Include="Util.Behrang\ApiHandler\WebAPI.cs" />
     <Compile Include="Util.Behrang\ConfigurationHelper\AppConfigHandler.cs" />
+    <Compile Include="Util.Behrang\CustomReport\HtmlCreator.cs" />
+    <Compile Include="Util.Behrang\CustomReport\TestResult.cs" />
     <Compile Include="Util.Behrang\EmailHandler\EmailHandler.cs" />
     <Compile Include="Util.Behrang\SpreadsheetDataHanler\SpreadSheetInputOutput.cs" />
     <Compile Include="Util.Behrang\FileHandler\FileAndFolderHandler.cs" />
@@ -123,6 +132,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>BrowserTest.feature.cs</LastGenOutput>
     </None>
+    <None Include="DevTests\Feature\GenerateTestReport.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GenerateTestReport.feature.cs</LastGenOutput>
+    </None>
     <None Include="DevTests\Feature\UtilTests.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UtilTests.feature.cs</LastGenOutput>
@@ -132,6 +145,17 @@
       <LastGenOutput>WebApiTests.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
+    <None Include="Reports\Style\css\.DS_Store" />
+    <None Include="Reports\Style\css\bootstrap-grid.css.map" />
+    <None Include="Reports\Style\css\bootstrap-grid.min.css.map" />
+    <None Include="Reports\Style\css\bootstrap-reboot.css.map" />
+    <None Include="Reports\Style\css\bootstrap-reboot.min.css.map" />
+    <None Include="Reports\Style\css\bootstrap.css.map" />
+    <None Include="Reports\Style\css\bootstrap.min.css.map" />
+    <None Include="Reports\Style\js\bootstrap.bundle.js.map" />
+    <None Include="Reports\Style\js\bootstrap.bundle.min.js.map" />
+    <None Include="Reports\Style\js\bootstrap.js.map" />
+    <None Include="Reports\Style\js\bootstrap.min.js.map" />
     <None Include="Resources\ChromeExtensions\Authenticator_v4.18.crx" />
     <None Include="Resources\ChromeExtensions\XpathHelperWizard_v3.0.24_0.crx" />
   </ItemGroup>
@@ -139,6 +163,22 @@
     <Folder Include="Reports\Logs\" />
     <Folder Include="Util.Behrang\ComponentHelper\" />
     <Folder Include="Util.Behrang\ExcelReader\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Reports\Style\css\bootstrap-grid.css" />
+    <Content Include="Reports\Style\css\bootstrap-grid.min.css" />
+    <Content Include="Reports\Style\css\bootstrap-reboot.css" />
+    <Content Include="Reports\Style\css\bootstrap-reboot.min.css" />
+    <Content Include="Reports\Style\css\bootstrap.css" />
+    <Content Include="Reports\Style\css\bootstrap.min.css" />
+    <Content Include="Reports\Style\css\cover.css" />
+    <Content Include="Reports\Style\img\ico.png" />
+    <Content Include="Reports\Style\js\bootstrap.bundle.js" />
+    <Content Include="Reports\Style\js\bootstrap.bundle.min.js" />
+    <Content Include="Reports\Style\js\bootstrap.js" />
+    <Content Include="Reports\Style\js\bootstrap.min.js" />
+    <Content Include="Reports\Style\js\loader.js" />
+    <Content Include="Reports\test.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -1,0 +1,144 @@
+﻿<html>
+
+<head>
+    <!-- BOOTSTRAP -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Test Execution Report">
+    <meta name="author" content="Behrang Bina">
+    <link rel="icon" href="Style/img/ico.png">
+
+    <link href="Style/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="Style/css/cover.css" rel="stylesheet">
+
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="Style/js/loader.js"></script>
+
+
+
+
+    <script type="text/javascript">
+
+
+        function sayhi() {
+            window.alert('hi');
+        }
+        // Load the Visualization API and the corechart package.
+        google.charts.load('current', { 'packages': ['corechart'] });
+
+        // Set a callback to run when the Google Visualization API is loaded.
+        google.charts.setOnLoadCallback(drawChart);
+
+        // Callback that creates and populates a data table,
+        // instantiates the pie chart, passes in the data and
+        // draws it.
+        function drawChart() {
+
+            // Create the data table.
+            var data = new window.google.visualization.DataTable();
+            data.addColumn('string', 'Test Result');
+            data.addColumn('number', 'Test Cases');
+            data.addRows([
+                ['PASS', 3],
+                ['FAIL', 1],
+                ['NO RUN', 1]
+            ]);
+
+            // Set chart options
+            var options = {
+                'title': 'Test Summary Report',
+                'is3D': true,
+                'legend': 'middle',
+                'width': 400,
+                'height': 300,
+                slices: {
+                    0: { color: '#008000', offset: 0.1 },
+                    1: { color: '#ff0000', offset: 0.1 },
+                    2: { color: '#e6e6e6', offset: 0.1 }
+                },
+                chartArea: { left: 200 }
+            };
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new window.google.visualization.PieChart(window.document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
+    
+</head>
+
+<body class="text-center">
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+        <div>
+            <h3 class="masthead-brand">Test Summary Report</h3>
+            <nav class="nav nav-masthead justify-content-center">
+                <a class="nav-link active" href="#">Summary</a>
+                <a class="nav-link" href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!--  <main role="main" class="inner cover">
+        <h1 class="cover-heading">Test Report</h1>
+        <p class="lead">
+        <div id="chart_div"></div>
+        <p class="lead">
+            <a href="#" class="btn btn-lg btn-secondary" onclick="sayhi()">Learn more</a>
+        </p>
+    </main>-->
+    <div class="container">
+        <h2>Black/Dark Table</h2>
+        <p>The .table-dark class adds a black background to the table:</p>
+        <table class="table table-dark">
+            <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>john@example.com</td>
+            </tr>
+            <tr>
+                <td>Mary</td>
+                <td>Moe</td>
+                <td>mary@example.com</td>
+            </tr>
+            <tr>
+                <td>July</td>
+                <td>Dooley</td>
+                <td>july@example.com</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <br/><br/>
+    <div class="card text-center">
+        <div class="card-footer text-muted">
+            Test Summary Report
+        </div>
+        <div class="card-body">
+            <div class="card-text" id="chart_div" style="text-align: center"></div>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        <div class="card-footer text-muted">
+            <script>
+                // Use of Date.now() function 
+                var d = Date(Date.now());
+                // Converting the number of millisecond in date string 
+                a = d.toString();
+                // Printing the current date                     
+                document.write(a);
+            </script>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

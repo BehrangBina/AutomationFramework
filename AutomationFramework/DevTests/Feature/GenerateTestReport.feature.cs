@@ -18,20 +18,20 @@ namespace AutomationFramework.DevTests.Feature
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("BrowserTest")]
-    public partial class BrowserTestFeature
+    [NUnit.Framework.DescriptionAttribute("GenerateTestReport")]
+    public partial class GenerateTestReportFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "BrowserTest.feature"
+#line 1 "GenerateTestReport.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "BrowserTest", "\tWeb Driver Instance can be instanciated and execute the automation script", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "GenerateTestReport", "\tIn order to Generate Report\r\n\tI need to make sure HtmlCreator is working", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -70,32 +70,19 @@ namespace AutomationFramework.DevTests.Feature
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Can Instantiate a browser with supported browser")]
-        [NUnit.Framework.CategoryAttribute("mytag")]
-        public virtual void CanInstantiateABrowserWithSupportedBrowser()
+        [NUnit.Framework.DescriptionAttribute("Generate Custom HTML Report")]
+        [NUnit.Framework.CategoryAttribute("devtests")]
+        public virtual void GenerateCustomHTMLReport()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Can Instantiate a browser with supported browser", null, new string[] {
-                        "mytag"});
-#line 5
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Generate Custom HTML Report", null, new string[] {
+                        "devtests"});
+#line 6
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 6
-  testRunner.Given("I Have an instance of the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Browsers",
-                        "Url"});
-            table1.AddRow(new string[] {
-                        "Edge",
-                        "http://www.yahoo.com"});
-            table1.AddRow(new string[] {
-                        "Firefox",
-                        "http://www.bing.com"});
-            table1.AddRow(new string[] {
-                        "Chrome",
-                        "https://www.google.com"});
 #line 7
-  testRunner.Then("I Can lunch the browser with a url", ((string)(null)), table1, "Then ");
+ testRunner.Given("I have entered collection of test results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 8
+ testRunner.Then("I Can Generate the html Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
