@@ -34,7 +34,8 @@
                     var data = new google.visualization.DataTable();
                     data.addColumn('string', 'Test Result');
                     data.addColumn('number', 'Test Cases');
-                    data.addRows([['PASS',2],['FAIL',1],['FAIL',1]])
+                    
+                    data.addRows([['PASS',2],['FAIL',1],['PENDING',1]])
                 
 
                             // Set chart options
@@ -87,19 +88,19 @@
 Test Step 1</td><td>
 Comment 1</td><td>
 Pass</td><td>
-101</td></tr>
+100</td></tr>
 <tr>
 <td>
 Test Step 2</td><td>
 Comment 2</td><td>
 Pass</td><td>
-402</td></tr>
+401</td></tr>
 <tr>
 <td>
 Test Step 3</td><td>
 Comment 3</td><td>
 Fail</td><td>
-802</td></tr>
+801</td></tr>
 <tr>
 <td>
 Test Step 4</td><td>
@@ -108,7 +109,7 @@ Pending</td><td>
 1302</td></tr>
 </tbody>
 </table>
-<p>Time Spent: 1S</p>
+<p>Time Spent: 1.602S</p>
 
                     </div>
                     <br/><br/>
@@ -117,7 +118,7 @@ Pending</td><td>
                             Test Summary Report
                         </div>
                         <div class='card-body'>
-                            <div class='card-text' id='chart_div' style='text-align: center'></div><div class='row'><div class='col-sm'><button type='button' class='btn badge-success'>Pass:  <span class='badge badge-light'>2</span> </button></div><div class='col-sm'><button type='button' class='btn badge-danger'>Fail:  <span class='badge badge-light'>1</span> </button></div><div class='col-sm'><button type='button' class='btn badge-secondary'>Pending:  <span class='badge badge-light'>1</span> </button></div></row></div>
+                            <div class='card-text' id='chart_div' style='text-align: center'></div><div class='row'><div class='col-sm'><button type='button' class='btn badge-success'>Pass:  <span class='badge badge-light'>2</span> </button></div><div class='col-sm'><button type='button' class='btn badge-danger'>Fail:  <span class='badge badge-light'>1</span> </button></div><div class='col-sm'><button type='button' class='btn badge-secondary'>Pending:  <span class='badge badge-light'>1</span> </button></div></row><div class='row'><div class='col-sm-12'></div></row></div>
                         <div class='card-footer text-muted'>
                             <script>
                                 // Use of Date.now() function 

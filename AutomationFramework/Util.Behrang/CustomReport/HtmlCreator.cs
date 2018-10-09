@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Web.Security;
 using AutomationFramework.Util.Behrang.ConfigurationHelper;
 using log4net;
 
@@ -58,10 +57,11 @@ namespace AutomationFramework.Util.Behrang.CustomReport
                     var data = new google.visualization.DataTable();
                     data.addColumn('string', 'Test Result');
                     data.addColumn('number', 'Test Cases');
+                    
                     data.addRows([";
                      _html += $"['PASS',{pass}],";
                      _html += $"['FAIL',{fail}]," ;
-                     _html += $"['FAIL',{pending}]";
+                     _html += $"['PENDING',{pending}]";
                      _html+="])";
         }
 
@@ -187,8 +187,8 @@ namespace AutomationFramework.Util.Behrang.CustomReport
                   $"{Status.Pending}:  <span class='badge badge-light'>{pending}</span>" +
                   " </button></div>";
             p2 += "</row>";
-
-            p2 +=  @"</div>
+            p2 += "<div class='row'><div class='col-sm-12'></div></row>";
+           p2 +=  @"</div>
                         <div class='card-footer text-muted'>
                             <script>
                                 // Use of Date.now() function 
