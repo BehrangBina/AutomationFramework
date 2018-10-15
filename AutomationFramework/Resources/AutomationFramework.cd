@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AutomationFramework.Online.Behrang.BrowserSupport.BrowserExtension" Collapsed="true">
+    <Position X="39" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAACAAAGAADABAAAAChAgBAAgAAAAAAAQAABAIQAA=</HashCode>
+      <FileName>Online.Behrang\BrowserSupport\BrowserExtension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomationFramework.Online.Behrang.ChromeHandler.Chrome">
+    <Position X="3.25" Y="1.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAIBAAAQAAABgAAgAAAAAEACAAAAAIAAAAIEAAAAA=</HashCode>
+      <FileName>Online.Behrang\ChromeHandler\Chrome.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AutomationFramework.Online.Behrang.EdgeHandler.Edge">
+    <Position X="25.25" Y="1.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAQAAABgAAgAAAAAEAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Online.Behrang\EdgeHandler\Edge.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AutomationFramework.Online.Behrang.Browser">
+    <Position X="1" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAgAgAAAgAAAAAAAAgA=</HashCode>
+      <FileName>Online.Behrang\Browser.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="18.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AutomationFramework.Online.Behrang.FirefoxHandler.Firefox">
+    <Position X="7.25" Y="1.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABgAAgAAAAAEAAAAAAAAAAAAAEAgAAA=</HashCode>
+      <FileName>Online.Behrang\FirefoxHandler\Firefox.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AutomationFramework.Util.Behrang.ApiHandler.ApiHeaders">
+    <Position X="11" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAEAAAAAAAAAAgA=</HashCode>
+      <FileName>Util.Behrang\ApiHandler\ApiHeaders.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomationFramework.Util.Behrang.ApiHandler.JsonFormatter" Collapsed="true">
+    <Position X="40.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Util.Behrang\ApiHandler\JsonFormatter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomationFramework.Util.Behrang.ApiHandler.WebApi">
+    <Position X="20" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Util.Behrang\ApiHandler\WebAPI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomationFramework.Util.Behrang.CustomReport.HtmlCreator">
+    <Position X="13.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAgAAAAQAAAAgAQAAAA=</HashCode>
+      <FileName>Util.Behrang\CustomReport\HtmlCreator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomationFramework.Util.Behrang.CustomReport.TestResult">
+    <Position X="23" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIABAAAEAAAAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Util.Behrang\CustomReport\TestResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomationFramework.Util.Behrang.EmailHandler.EmailHandler">
+    <Position X="35.75" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Util.Behrang\EmailHandler\EmailHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomationFramework.Util.Behrang.FileHandler.FileAndFolderHandler">
+    <Position X="33" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Util.Behrang\FileHandler\FileAndFolderHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomationFramework.Util.Behrang.ReflectionHandler.ObjectManipulator">
+    <Position X="29.75" Y="1.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAQAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Util.Behrang\ReflectionHandler\ObjectManipulator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomationFramework.Util.Behrang.SpreadsheetDataHanler.SpreadSheetInputOutput">
+    <Position X="15.75" Y="1.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAEAAAAAACAAAAAAACAAAAgAAAAAAIAAAABAAAA=</HashCode>
+      <FileName>Util.Behrang\SpreadsheetDataHanler\SpreadSheetInputOutput.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="AutomationFramework.Online.Behrang.IBrowserHandler" Collapsed="true">
+    <Position X="39" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Online.Behrang\IBrowserHandler.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="AutomationFramework.Online.Behrang.SupportedBrowsers" Collapsed="true">
+    <Position X="39" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAgQAAABAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Online.Behrang\SupportedBrowsers.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="AutomationFramework.Util.Behrang.ApiHandler.ApiContentType" Collapsed="true">
+    <Position X="39" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAABAAAAAAACAAAAgA=</HashCode>
+      <FileName>Util.Behrang\ApiHandler\ApiContentType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="AutomationFramework.Util.Behrang.CustomReport.Status" Collapsed="true">
+    <Position X="40.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAgAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Util.Behrang\CustomReport\TestResult.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
