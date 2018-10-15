@@ -13,5 +13,5 @@ Hopefuly will get refactored and improved.
 + Browser Compatibility support
 
 ## Class Diagram
-[Class Diagram] (file://AutomationFramework.png)
+[Class Diagram] (https://github.com/BehrangBina/AutomationFramework/blob/master/AutomationFramework.png)
 
